@@ -38,7 +38,7 @@
             display: grid;
             grid-template-areas:
                 'header header2 header2 header2 header2 header2 header2 header2 header2 header2 header2 header2'
-                /* The grid container */
+                /* O container da grade */
                 'left middle middle middle middle middle middle middle middle middle middle middle';
         }
 
@@ -76,7 +76,7 @@
             align-items: center;
         }
 
-        .container{ 
+        .container {
             margin: 30px 50px;
         }
 
@@ -110,19 +110,46 @@
             background-color: #777;
         }
 
-        @media (max-width: 600px) {
-            .grid-container {
-                grid-template-areas:
-                    'header header header header header header'
-                    'left left left left left left'
-                    'middle middle middle middle middle middle middle middle';
-            }
+        /* Estilo para a seção "estoque" */
+        .estoque {
+            grid-area: estoque;
+        }
+
+        /* Estilo para a tabela */
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            background-color: #d3d3d3;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .quantidade,
+        .preco,
+        .quantidade-vendida {
+            text-align: center;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
         }
     </style>
 </head>
 
 <body>
-
     <div class="grid-container">
         <div class="header">
             <h2>Ber & Nice</h2>
@@ -140,6 +167,7 @@
                 <a href="login.html">Sair</a>
             </div>
         </div>
+
         <div class="middle" style="background-color: #151719;">
             <div class="container">
                 <div class="title">
@@ -152,12 +180,325 @@
                     <a href="editar_produto.html">Editar Produto</a>
                     <a href="cadastrar_fornecedor.html">Cadastrar Fornecedor</a>
                 </div>
+                <div class="title">
+                    <hr>
+                </div>
 
+                <div class="estoque">
+                    <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Pesquisar por nome ou ID..">
+                    <table id="myTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">ID</th>
+                                <th onclick="sortTable(1)">Nome</th>
+                                <th onclick="sortTable(2)">Fornecedor</th>
+                                <th onclick="sortTable(3)">Quantidade</th>
+                                <th onclick="sortTable(4)">Preço</th>
+                                <th onclick="sortTable(5)">Quantidade Vendida</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="id">1</td>
+                                <td class="nome">Lápis</td>
+                                <td class="fornecedor">Fornecedor A</td>
+                                <td class="quantidade">87</td>
+                                <td class="preco">0.6</td>
+                                <td class="quantidade-vendida">12</td>
+                            </tr>
+                            <tr>
+                                <td class="id">2</td>
+                                <td class="nome">Caneta</td>
+                                <td class="fornecedor">Fornecedor B</td>
+                                <td class="quantidade">65</td>
+                                <td class="preco">1.2</td>
+                                <td class="quantidade-vendida">15</td>
+                            </tr>
+                            <tr>
+                                <td class="id">3</td>
+                                <td class="nome">Borracha</td>
+                                <td class="fornecedor">Fornecedor C</td>
+                                <td class="quantidade">112</td>
+                                <td class="preco">0.25</td>
+                                <td class="quantidade-vendida">8</td>
+                            </tr>
+                            <tr>
+                                <td class="id">4</td>
+                                <td class="nome">Caderno</td>
+                                <td class="fornecedor">Fornecedor D</td>
+                                <td class="quantidade">54</td>
+                                <td class="preco">3.7</td>
+                                <td class="quantidade-vendida">22</td>
+                            </tr>
+                            <tr>
+                                <td class="id">5</td>
+                                <td class="nome">Cola</td>
+                                <td class="fornecedor">Fornecedor E</td>
+                                <td class="quantidade">72</td>
+                                <td class="preco">1.1</td>
+                                <td class="quantidade-vendida">14</td>
+                            </tr>
+                            <tr>
+                                <td class="id">6</td>
+                                <td class="nome">Marca-texto</td>
+                                <td class="fornecedor">Fornecedor F</td>
+                                <td class="quantidade">37</td>
+                                <td class="preco">1.8</td>
+                                <td class="quantidade-vendida">7</td>
+                            </tr>
+                            <tr>
+                                <td class="id">7</td>
+                                <td class="nome">Régua</td>
+                                <td class="fornecedor">Fornecedor A</td>
+                                <td class="quantidade">99</td>
+                                <td class="preco">0.9</td>
+                                <td class="quantidade-vendida">20</td>
+                            </tr>
+                            <tr>
+                                <td class="id">8</td>
+                                <td class="nome">Papel A4</td>
+                                <td class="fornecedor">Fornecedor G</td>
+                                <td class="quantidade">188</td>
+                                <td class="preco">4.3</td>
+                                <td class="quantidade-vendida">28</td>
+                            </tr>
+                            <tr>
+                                <td class="id">9</td>
+                                <td class="nome">Apontador</td>
+                                <td class="fornecedor">Fornecedor B</td>
+                                <td class="quantidade">68</td>
+                                <td class="preco">0.7</td>
+                                <td class="quantidade-vendida">11</td>
+                            </tr>
+                            <tr>
+                                <td class="id">10</td>
+                                <td class="nome">Agenda</td>
+                                <td class="fornecedor">Fornecedor H</td>
+                                <td class="quantidade">25</td>
+                                <td class="preco">4.5</td>
+                                <td class="quantidade-vendida">6</td>
+                            </tr>
+                            <tr>
+                                <td class="id">11</td>
+                                <td class="nome">Clips</td>
+                                <td class="fornecedor">Fornecedor I</td>
+                                <td class="quantidade">136</td>
+                                <td class="preco">0.3</td>
+                                <td class="quantidade-vendida">25</td>
+                            </tr>
+                            <tr>
+                                <td class="id">12</td>
+                                <td class="nome">Fita adesiva</td>
+                                <td class="fornecedor">Fornecedor J</td>
+                                <td class="quantidade">97</td>
+                                <td class="preco">1.4</td>
+                                <td class="quantidade-vendida">18</td>
+                            </tr>
+                            <tr>
+                                <td class="id">13</td>
+                                <td class="nome">Calculadora</td>
+                                <td class="fornecedor">Fornecedor K</td>
+                                <td class="quantidade">41</td>
+                                <td class="preco">9.5</td>
+                                <td class="quantidade-vendida">9</td>
+                            </tr>
+                            <tr>
+                                <td class="id">14</td>
+                                <td class="nome">Pasta suspensa</td>
+                                <td class="fornecedor">Fornecedor L</td>
+                                <td class="quantidade">73</td>
+                                <td class="preco">2.2</td>
+                                <td class="quantidade-vendida">13</td>
+                            </tr>
+                            <tr>
+                                <td class="id">15</td>
+                                <td class="nome">Envelope</td>
+                                <td class="fornecedor">Fornecedor M</td>
+                                <td class="quantidade">128</td>
+                                <td class="preco">0.4</td>
+                                <td class="quantidade-vendida">23</td>
+                            </tr>
+                            <tr>
+                                <td class="id">16</td>
+                                <td class="nome">Caixa de lápis de cor</td>
+                                <td class="fornecedor">Fornecedor N</td>
+                                <td class="quantidade">50</td>
+                                <td class="preco">6.7</td>
+                                <td class="quantidade-vendida">7</td>
+                            </tr>
+                            <tr>
+                                <td class="id">17</td>
+                                <td class="nome">Tesoura</td>
+                                <td class="fornecedor">Fornecedor O</td>
+                                <td class="quantidade">80</td>
+                                <td class="preco">1.8</td>
+                                <td class="quantidade-vendida">16</td>
+                            </tr>
+                            <tr>
+                                <td class="id">18</td>
+                                <td class="nome">Bloco de notas</td>
+                                <td class="fornecedor">Fornecedor P</td>
+                                <td class="quantidade">63</td>
+                                <td class="preco">2.4</td>
+                                <td class="quantidade-vendida">11</td>
+                            </tr>
+                            <tr>
+                                <td class="id">19</td>
+                                <td class="nome">Grampeador</td>
+                                <td class="fornecedor">Fornecedor Q</td>
+                                <td class="quantidade">59</td>
+                                <td class="preco">3.1</td>
+                                <td class="quantidade-vendida">10</td>
+                            </tr>
+                            <tr>
+                                <td class="id">20</td>
+                                <td class="nome">Elástico</td>
+                                <td class="fornecedor">Fornecedor R</td>
+                                <td class="quantidade">92</td>
+                                <td class="preco">0.8</td>
+                                <td class="quantidade-vendida">19</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-
         </div>
     </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Altere o índice para 0 para pesquisar por ID
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+        var sortColumn = -1;
+        function sortTable(column) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("myTable");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[column];
+                    y = rows[i + 1].getElementsByTagName("td")[column];
+                    if (sortColumn !== column) {
+                        sortColumn = column;
+                        x = rows[i].getElementsByTagName("td")[column];
+                        y = rows[i + 1].getElementsByTagName("td")[column];
+                        shouldSwitch = true;
+                    } else if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 
 </html>
+
+<!--
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
+    <link href='https fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
+    <style>
+        /* Estilos anteriores */
+
+        th {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Altere o índice para 0 para pesquisar por ID
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+        var sortColumn = -1;
+        var ascending = true; // Adicionado para controlar a ordem ascendente/descendente
+
+        function sortTable(column) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("myTable");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[column];
+                    y = rows[i + 1].getElementsByTagName("td")[column];
+                    var xValue = x.innerHTML.toLowerCase();
+                    var yValue = y.innerHTML.toLowerCase();
+
+                    if (sortColumn !== column) {
+                        ascending = true; // Se a coluna for diferente, comece em ordem ascendente
+                        sortColumn = column;
+                    } else if (xValue > yValue) {
+                        shouldSwitch = true;
+                    }
+
+                    if (!ascending) {
+                        // Se não for ascendente, inverte a ordem
+                        shouldSwitch = !shouldSwitch;
+                    }
+
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+                // Inverte a ordem após cada iteração para que a próxima seja oposta à atual
+                ascending = !ascending;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+-->
