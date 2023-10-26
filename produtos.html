@@ -1,158 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <link href='assets\css\layout.css' rel='stylesheet'>
+    <link href='assets\css\produtos.css' rel='stylesheet'>
+    <title>Produtos - Ber & Nice</title>
 
-        body {
-            font-family: 'Noto Sans';
-        }
-
-        .header {
-            grid-area: header;
-            background-color: #16191b;
-            padding: 15px 15px;
-            text-align: justify;
-        }
-
-        .header h2 {
-            color: white;
-            margin-left: 20px;
-            font-size: 28px;
-            font-family: 'Aboreto';
-        }
-
-        .header2 {
-            grid-area: header2;
-            background-color: #212529;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-areas:
-                'header header2 header2 header2 header2 header2 header2 header2 header2 header2 header2 header2'
-                /* O container da grade */
-                'left middle middle middle middle middle middle middle middle middle middle middle';
-        }
-
-        .left {
-            grid-area: left;
-            padding: 15px 15px;
-            border: 0.5px solid rgba(255, 255, 255, 0.20);
-        }
-
-        .left .nav-menu {
-            margin-top: 20px;
-            margin-left: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .left .nav-menu a {
-            font-family: 'Noto Sans';
-            padding: 6px;
-            font-size: 18px;
-            text-decoration: none;
-            color: #6EA8FE;
-            transition: 0.2s;
-        }
-
-        .left .nav-menu a:hover {
-            padding: 6px 6px 6px 11px;
-            text-decoration: underline;
-        }
-
-        .middle {
-            grid-area: middle;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container {
-            margin: 30px 50px;
-        }
-
-        .title h2 {
-            color: white;
-            font-weight: bold;
-            font-size: 40px;
-        }
-
-        .title hr {
-            margin: 20px 0;
-            border-radius: 2px;
-            border-color: rgba(255, 255, 255, 0.20);
-        }
-
-        .scroll-menu {
-            background-color: #333;
-            overflow: auto;
-            white-space: nowrap;
-        }
-
-        .scroll-menu a {
-            display: inline-block;
-            color: white;
-            text-align: center;
-            padding: 14px;
-            text-decoration: none;
-        }
-
-        .scroll-menu a:hover {
-            background-color: #777;
-        }
-
-        /* Estilo para a seção "estoque" */
-        .estoque {
-            grid-area: estoque;
-        }
-
-        /* Estilo para a tabela */
-        table {
-            font-family: Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            background-color: #d3d3d3;
-            width: 100%;
-        }
-
-        th,
-        td {
-            border: 1px solid #dddddd;
-            text-align: center;
-            padding: 8px;
-        }
-
-        .quantidade,
-        .preco,
-        .quantidade-vendida {
-            text-align: center;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
-    </style>
 </head>
 
 <body>
     <div class="grid-container">
         <div class="header">
-            <h2>Ber & Nice</h2>
+            <a href="menu.html">Ber & Nice</a>
         </div>
 
         <div class="header2">
@@ -160,7 +23,7 @@
 
         <div class="left" style="background-color: #212529;">
             <div class="nav-menu">
-                <a href="menu.html">Menu</a>
+                <a href="realizar_venda.html">Realizar Venda</a>
                 <a href="produtos.html">Produtos</a>
                 <a href="usuarios.html">Usuários</a>
                 <a href="relatorios.html">Relatórios</a>
@@ -185,9 +48,9 @@
                 </div>
 
                 <div class="estoque">
-                    <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Pesquisar por nome ou ID..">
+                    <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Pesquisar nome...">
                     <table id="myTable">
-                        <thead>
+                        <thead class="cabecalho">
                             <tr>
                                 <th onclick="sortTable(0)">ID</th>
                                 <th onclick="sortTable(1)">Nome</th>
@@ -199,63 +62,63 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="id">1</td>
+                                <td class="id">001</td>
                                 <td class="nome">Lápis</td>
                                 <td class="fornecedor">Fornecedor A</td>
-                                <td class="quantidade">87</td>
+                                <td class="quantidade">087</td>
                                 <td class="preco">0.6</td>
                                 <td class="quantidade-vendida">12</td>
                             </tr>
                             <tr>
-                                <td class="id">2</td>
+                                <td class="id">002</td>
                                 <td class="nome">Caneta</td>
                                 <td class="fornecedor">Fornecedor B</td>
-                                <td class="quantidade">65</td>
+                                <td class="quantidade">065</td>
                                 <td class="preco">1.2</td>
                                 <td class="quantidade-vendida">15</td>
                             </tr>
                             <tr>
-                                <td class="id">3</td>
+                                <td class="id">003</td>
                                 <td class="nome">Borracha</td>
                                 <td class="fornecedor">Fornecedor C</td>
                                 <td class="quantidade">112</td>
                                 <td class="preco">0.25</td>
-                                <td class="quantidade-vendida">8</td>
+                                <td class="quantidade-vendida">08</td>
                             </tr>
                             <tr>
-                                <td class="id">4</td>
+                                <td class="id">004</td>
                                 <td class="nome">Caderno</td>
                                 <td class="fornecedor">Fornecedor D</td>
-                                <td class="quantidade">54</td>
+                                <td class="quantidade">054</td>
                                 <td class="preco">3.7</td>
                                 <td class="quantidade-vendida">22</td>
                             </tr>
                             <tr>
-                                <td class="id">5</td>
+                                <td class="id">005</td>
                                 <td class="nome">Cola</td>
                                 <td class="fornecedor">Fornecedor E</td>
-                                <td class="quantidade">72</td>
+                                <td class="quantidade">072</td>
                                 <td class="preco">1.1</td>
                                 <td class="quantidade-vendida">14</td>
                             </tr>
                             <tr>
-                                <td class="id">6</td>
+                                <td class="id">006</td>
                                 <td class="nome">Marca-texto</td>
                                 <td class="fornecedor">Fornecedor F</td>
-                                <td class="quantidade">37</td>
+                                <td class="quantidade">037</td>
                                 <td class="preco">1.8</td>
-                                <td class="quantidade-vendida">7</td>
+                                <td class="quantidade-vendida">07</td>
                             </tr>
                             <tr>
-                                <td class="id">7</td>
+                                <td class="id">007</td>
                                 <td class="nome">Régua</td>
                                 <td class="fornecedor">Fornecedor A</td>
-                                <td class="quantidade">99</td>
+                                <td class="quantidade">099</td>
                                 <td class="preco">0.9</td>
                                 <td class="quantidade-vendida">20</td>
                             </tr>
                             <tr>
-                                <td class="id">8</td>
+                                <td class="id">008</td>
                                 <td class="nome">Papel A4</td>
                                 <td class="fornecedor">Fornecedor G</td>
                                 <td class="quantidade">188</td>
@@ -263,23 +126,23 @@
                                 <td class="quantidade-vendida">28</td>
                             </tr>
                             <tr>
-                                <td class="id">9</td>
+                                <td class="id">009</td>
                                 <td class="nome">Apontador</td>
                                 <td class="fornecedor">Fornecedor B</td>
-                                <td class="quantidade">68</td>
+                                <td class="quantidade">068</td>
                                 <td class="preco">0.7</td>
                                 <td class="quantidade-vendida">11</td>
                             </tr>
                             <tr>
-                                <td class="id">10</td>
+                                <td class="id">010</td>
                                 <td class="nome">Agenda</td>
                                 <td class="fornecedor">Fornecedor H</td>
-                                <td class="quantidade">25</td>
+                                <td class="quantidade">025</td>
                                 <td class="preco">4.5</td>
-                                <td class="quantidade-vendida">6</td>
+                                <td class="quantidade-vendida">06</td>
                             </tr>
                             <tr>
-                                <td class="id">11</td>
+                                <td class="id">011</td>
                                 <td class="nome">Clips</td>
                                 <td class="fornecedor">Fornecedor I</td>
                                 <td class="quantidade">136</td>
@@ -287,31 +150,31 @@
                                 <td class="quantidade-vendida">25</td>
                             </tr>
                             <tr>
-                                <td class="id">12</td>
+                                <td class="id">012</td>
                                 <td class="nome">Fita adesiva</td>
                                 <td class="fornecedor">Fornecedor J</td>
-                                <td class="quantidade">97</td>
+                                <td class="quantidade">097</td>
                                 <td class="preco">1.4</td>
                                 <td class="quantidade-vendida">18</td>
                             </tr>
                             <tr>
-                                <td class="id">13</td>
+                                <td class="id">013</td>
                                 <td class="nome">Calculadora</td>
                                 <td class="fornecedor">Fornecedor K</td>
-                                <td class="quantidade">41</td>
+                                <td class="quantidade">041</td>
                                 <td class="preco">9.5</td>
-                                <td class="quantidade-vendida">9</td>
+                                <td class="quantidade-vendida">09</td>
                             </tr>
                             <tr>
-                                <td class="id">14</td>
+                                <td class="id">014</td>
                                 <td class="nome">Pasta suspensa</td>
                                 <td class="fornecedor">Fornecedor L</td>
-                                <td class="quantidade">73</td>
+                                <td class="quantidade">073</td>
                                 <td class="preco">2.2</td>
                                 <td class="quantidade-vendida">13</td>
                             </tr>
                             <tr>
-                                <td class="id">15</td>
+                                <td class="id">015</td>
                                 <td class="nome">Envelope</td>
                                 <td class="fornecedor">Fornecedor M</td>
                                 <td class="quantidade">128</td>
@@ -319,42 +182,42 @@
                                 <td class="quantidade-vendida">23</td>
                             </tr>
                             <tr>
-                                <td class="id">16</td>
+                                <td class="id">016</td>
                                 <td class="nome">Caixa de lápis de cor</td>
                                 <td class="fornecedor">Fornecedor N</td>
-                                <td class="quantidade">50</td>
+                                <td class="quantidade">050</td>
                                 <td class="preco">6.7</td>
-                                <td class="quantidade-vendida">7</td>
+                                <td class="quantidade-vendida">07</td>
                             </tr>
                             <tr>
-                                <td class="id">17</td>
+                                <td class="id">017</td>
                                 <td class="nome">Tesoura</td>
                                 <td class="fornecedor">Fornecedor O</td>
-                                <td class="quantidade">80</td>
+                                <td class="quantidade">080</td>
                                 <td class="preco">1.8</td>
                                 <td class="quantidade-vendida">16</td>
                             </tr>
                             <tr>
-                                <td class="id">18</td>
+                                <td class="id">018</td>
                                 <td class="nome">Bloco de notas</td>
                                 <td class="fornecedor">Fornecedor P</td>
-                                <td class="quantidade">63</td>
+                                <td class="quantidade">063</td>
                                 <td class="preco">2.4</td>
                                 <td class="quantidade-vendida">11</td>
                             </tr>
                             <tr>
-                                <td class="id">19</td>
+                                <td class="id">019</td>
                                 <td class="nome">Grampeador</td>
                                 <td class="fornecedor">Fornecedor Q</td>
-                                <td class="quantidade">59</td>
+                                <td class="quantidade">059</td>
                                 <td class="preco">3.1</td>
                                 <td class="quantidade-vendida">10</td>
                             </tr>
                             <tr>
-                                <td class="id">20</td>
+                                <td class="id">020</td>
                                 <td class="nome">Elástico</td>
                                 <td class="fornecedor">Fornecedor R</td>
-                                <td class="quantidade">92</td>
+                                <td class="quantidade">092</td>
                                 <td class="preco">0.8</td>
                                 <td class="quantidade-vendida">19</td>
                             </tr>
@@ -418,87 +281,3 @@
 </body>
 
 </html>
-
-<!--
-<!DOCTYPE html>
-<html>
-
-<head>
-    <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
-    <link href='https fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
-    <style>
-        /* Estilos anteriores */
-
-        th {
-            cursor: pointer;
-        }
-    </style>
-</head>
-
-<body>
-
-    <script>
-        function filterTable() {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementById("myInput");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("myTable");
-            tr = table.getElementsByTagName("tr");
-            for (i = 1; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[1]; // Altere o índice para 0 para pesquisar por ID
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-
-        var sortColumn = -1;
-        var ascending = true; // Adicionado para controlar a ordem ascendente/descendente
-
-        function sortTable(column) {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.getElementById("myTable");
-            switching = true;
-            while (switching) {
-                switching = false;
-                rows = table.rows;
-                for (i = 1; i < (rows.length - 1); i++) {
-                    shouldSwitch = false;
-                    x = rows[i].getElementsByTagName("td")[column];
-                    y = rows[i + 1].getElementsByTagName("td")[column];
-                    var xValue = x.innerHTML.toLowerCase();
-                    var yValue = y.innerHTML.toLowerCase();
-
-                    if (sortColumn !== column) {
-                        ascending = true; // Se a coluna for diferente, comece em ordem ascendente
-                        sortColumn = column;
-                    } else if (xValue > yValue) {
-                        shouldSwitch = true;
-                    }
-
-                    if (!ascending) {
-                        // Se não for ascendente, inverte a ordem
-                        shouldSwitch = !shouldSwitch;
-                    }
-
-                    if (shouldSwitch) {
-                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                        switching = true;
-                    }
-                }
-                // Inverte a ordem após cada iteração para que a próxima seja oposta à atual
-                ascending = !ascending;
-            }
-        }
-    </script>
-
-</body>
-
-</html>
-
--->

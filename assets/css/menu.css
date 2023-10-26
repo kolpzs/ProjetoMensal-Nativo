@@ -1,0 +1,28 @@
+.title {
+    margin: 30px 50px;
+}
+
+.title hr {
+    margin: 10px 0;
+    border-radius: 2px;
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+.title h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+canvas {
+    margin: 30px 50px;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-areas:
+            'header header header header header header'
+            'left left left left left left'
+            'middle middle middle middle middle middle middle middle';
+    }
+}

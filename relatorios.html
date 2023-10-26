@@ -1,124 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Noto Sans';
-        }
-
-        .header {
-            grid-area: header;
-            background-color: #16191b;
-            padding: 15px 15px;
-            text-align: justify;
-        }
-
-        .header h2 {
-            color: white;
-            margin-left: 20px;
-            font-size: 28px;
-            font-family: 'Aboreto';
-        }
-
-        .header2 {
-            grid-area: header2;
-            background-color: #212529;
-        }
-
-        .grid-container {
-            display: grid;
-            grid-template-areas:
-                'header header2 header2 header2 header2 header2 header2 header2 header2 header2 header2 header2'
-                /* The grid container */
-                'left middle middle middle middle middle middle middle middle middle middle middle';
-        }
-
-        .left {
-            grid-area: left;
-            padding: 15px 15px;
-            border: 0.5px solid rgba(255, 255, 255, 0.20);
-        }
-
-        .left .nav-menu {
-            margin-top: 20px;
-            margin-left: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .left .nav-menu a {
-            font-family: 'Noto Sans';
-            padding: 6px;
-            font-size: 18px;
-            text-decoration: none;
-            color: #6EA8FE;
-            transition: 0.2s;
-        }
-
-        .left .nav-menu a:hover {
-            padding: 6px 6px 6px 11px;
-            text-decoration: underline;
-        }
-
-        .middle {
-            grid-area: middle;
-            min-height: 100vh;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .title {
-            margin: 30px 50px;
-        }
-
-        .title hr {
-            margin: 10px 0;
-            border-radius: 2px;
-            border-color: rgba(255, 255, 255, 0.20);
-        }
-
-        .title h2 {
-            color: white;
-            font-weight: bold;
-            font-size: 40px;
-        }
-
-        canvas {
-            margin: 30px 50px;
-        }
-
-        .footer {
-            grid-area: footer;
-            background-color: #f1f1f1;
-            padding: 10px;
-            text-align: center;
-        }
-
-        @media (max-width: 600px) {
-            .grid-container {
-                grid-template-areas:
-                    'header header header header header header'
-                    'left left left left left left'
-                    'middle middle middle middle middle middle middle middle';
-            }
-        }
-    </style>
+    <link href='assets\css\layout.css' rel='stylesheet'>
+    <link href='assets\css\relatorios.css' rel='stylesheet'>
+    <title>Relatórios - Ber & Nice</title>
 </head>
 
 <body>
 
     <div class="grid-container">
         <div class="header">
-            <h2>Ber & Nice</h2>
+            <a href="menu.html">Ber & Nice</a>
         </div>
 
         <div class="header2">
@@ -126,7 +23,7 @@
 
         <div class="left" style="background-color: #212529;">
             <div class="nav-menu">
-                <a href="menu.html">Menu</a>
+                <a href="realizar_venda.html">Realizar Venda</a>
                 <a href="produtos.html">Produtos</a>
                 <a href="usuarios.html">Usuários</a>
                 <a href="relatorios.html">Relatórios</a>
