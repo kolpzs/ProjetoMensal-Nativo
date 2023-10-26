@@ -30,10 +30,212 @@
                 <a href="login.html">Sair</a>
             </div>
         </div>
-        <div class="middle" style="background-color: #151719;">
 
+        <div class="middle" style="background-color: #151719;">
+            <div class="container">
+                <div class="title">
+                    <h2>Usuários</h2>
+                    <hr>
+                </div>
+
+                <div class="scroll-menu">
+                    <a href="cadastrar_usuario.html">Cadastrar Usuário</a>
+                    <a href="editar_usuario.html">Editar Informações de Usuário</a>
+                </div>
+                <div class="title">
+                    <hr>
+                </div>
+
+                <div class="estoque">
+                    <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Pesquisar nome...">
+                    <table id="myTable">
+                        <thead class="cabecalho">
+                            <tr>
+                                <th onclick="sortTable(0)">ID</th>
+                                <th onclick="sortTable(1)">Nome</th>
+                                <th onclick="sortTable(2)">E-mail</th>
+                                <th onclick="sortTable(3)">Função</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="id">101110</td>
+                                <td class="nome">João da Silva</td>
+                                <td class="email">joaodasilva@email.com</td>
+                                <td class="funcao">Vendedor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">202220</td>
+                                <td class="nome">Maria Oliveira</td>
+                                <td class="email">mariaoliveira@email.com</td>
+                                <td class="funcao">Admin</td>
+                            </tr>
+                            <tr>
+                                <td class="id">303330</td>
+                                <td class="nome">Pedro Santos</td>
+                                <td class="email">pedrosantos@email.com</td>
+                                <td class="funcao">Gestor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">404440</td>
+                                <td class="nome">Ana Rodrigues</td>
+                                <td class="email">anarodrigues@email.com</td>
+                                <td class="funcao">Aprendiz</td>
+                            </tr>
+                            <tr>
+                                <td class="id">505550</td>
+                                <td class="nome">Carlos Pereira</td>
+                                <td class="email">carlospereira@email.com</td>
+                                <td class="funcao">Vendedor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">606660</td>
+                                <td class="nome">Sofia Fernandes</td>
+                                <td class="email">sofiafernandes@email.com</td>
+                                <td class "funcao">Admin</td>
+                            </tr>
+                            <tr>
+                                <td class="id">707770</td>
+                                <td class="nome">Paulo Martins</td>
+                                <td class="email">paulomartins@email.com</td>
+                                <td class="funcao">Gestor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">808880</td>
+                                <td class="nome">Luisa Ferreira</td>
+                                <td class="email">luisaferreira@email.com</td>
+                                <td class="funcao">Aprendiz</td>
+                            </tr>
+                            <tr>
+                                <td class="id">909990</td>
+                                <td class="nome">Miguel Silva</td>
+                                <td class="email">miguelsilva@email.com</td>
+                                <td class="funcao">Vendedor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1010010</td>
+                                <td class="nome">Clara Mendes</td>
+                                <td class="email">claramendes@email.com</td>
+                                <td class="funcao">Admin</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1110110</td>
+                                <td class="nome">Gustavo Pereira</td>
+                                <td class="email">gustavopereira@email.com</td>
+                                <td class="funcao">Gestor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1210120</td>
+                                <td class="nome">Laura Fernandes</td>
+                                <td class="email">laurafernandes@email.com</td>
+                                <td class="funcao">Aprendiz</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1310130</td>
+                                <td class="nome">Rui Santos</td>
+                                <td class="email">ruisantos@email.com</td>
+                                <td class="funcao">Vendedor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1410140</td>
+                                <td class="nome">Isabel Alves</td>
+                                <td class="email">isabelalves@email.com</td>
+                                <td class="funcao">Admin</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1510150</td>
+                                <td class="nome">Daniel Oliveira</td>
+                                <td class="email">danieloliveira@email.com</td>
+                                <td class="funcao">Gestor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1610160</td>
+                                <td class="nome">Carolina Santos</td>
+                                <td class="email">carolinasantos@email.com</td>
+                                <td class="funcao">Aprendiz</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1710170</td>
+                                <td class="nome">João Pereira</td>
+                                <td class="email">joaopereira@email.com</td>
+                                <td class="funcao">Vendedor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1810180</td>
+                                <td class="nome">Mariana Alves</td>
+                                <td class="email">marianaalves@email.com</td>
+                                <td class="funcao">Admin</td>
+                            </tr>
+                            <tr>
+                                <td class="id">1910190</td>
+                                <td class="nome">André Fernandes</td>
+                                <td class="email">andrefernandes@email.com</td>
+                                <td class="funcao">Gestor</td>
+                            </tr>
+                            <tr>
+                                <td class="id">2020200</td>
+                                <td class="nome">Beatriz Silva</td>
+                                <td class="email">beatrizsilva@email.com</td>
+                                <td class="funcao">Aprendiz</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
+
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1]; // Altere o índice para 0 para pesquisar por ID
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+        var sortColumn = -1;
+        function sortTable(column) {
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("myTable");
+            switching = true;
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("td")[column];
+                    y = rows[i + 1].getElementsByTagName("td")[column];
+                    if (sortColumn !== column) {
+                        sortColumn = column;
+                        x = rows[i].getElementsByTagName("td")[column];
+                        y = rows[i + 1].getElementsByTagName("td")[column];
+                        shouldSwitch = true;
+                    } else if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                        shouldSwitch = true;
+                    }
+                    if (shouldSwitch) {
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
 

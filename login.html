@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
+    <link href='assets\css\login.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Login - Ber & Nice</title>
+
+</head>
+
+<body>
+    <section class="area-login">
+        <div class="login">
+            <div class="logo">
+                <img src="assets\brand\logo.jpg">
+                <h2 class="ber">Ber & Nice</h2>
+            </div>
+
+            <form onsubmit="return redirectToMenu()">
+                <input type="text" name="nome" placeholder="Usuário" autofocus required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="submit" value="ENTRAR" href="menu.html">
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function redirectToMenu() {
+            // Redireciona para a página menu.html
+            window.location.href = "menu.html";
+            // Retorna false para evitar o envio do formulário tradicional
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>

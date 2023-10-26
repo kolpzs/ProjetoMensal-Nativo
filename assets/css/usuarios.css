@@ -1,0 +1,84 @@
+.container {
+    margin: 30px 50px;
+}
+
+.title h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.title hr {
+    margin: 20px 0;
+    border-radius: 2px;
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+.scroll-menu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scroll-menu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    border-right: 1px solid black;
+}
+
+.scroll-menu a:hover {
+    background-color: #777;
+}
+
+/* Estilo para a seção "estoque" */
+.estoque {
+    grid-area: estoque;
+}
+
+/* Estilo para a tabela */
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    background-color: #d3d3d3;
+    width: 100%;
+}
+
+.cabecalho {
+    background-color: #333;
+    color: white;
+}
+
+th {
+    cursor: pointer;
+}
+
+th:hover {
+    text-decoration: underline;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+.quantidade,
+.preco,
+.quantidade-vendida {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
