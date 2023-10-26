@@ -21,8 +21,8 @@
             </div>
 
             <form onsubmit="return redirectToMenu()">
-                <input type="text" name="nome" placeholder="Usuário" autofocus required>
-                <input type="password" name="senha" placeholder="Senha" required>
+                <input type="text"  oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" name="nome" placeholder="Usuário" autofocus required>
+                <input type="password"  oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" name="senha" placeholder="Senha" required>
                 <input type="submit" value="ENTRAR" href="menu.html">
             </form>
         </div>
@@ -35,6 +35,20 @@
             // Retorna false para evitar o envio do formulário tradicional
             return false;
         }
+
+        function InvalidMsg(textbox) {
+            if (textbox.value == '') {
+                textbox.setCustomValidity('Por favor, preencha os campos marcados.');
+            }
+            else if (textbox.validity.typeMismatch) {
+                textbox.setCustomValidity('Por favor, insira um valor válido na caixa marcada.');
+            }
+            else {
+                textbox.setCustomValidity('');
+            }
+            return true;
+        }
+
     </script>
 
 </body>
