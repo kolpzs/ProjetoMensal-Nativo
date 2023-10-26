@@ -132,3 +132,23 @@ span.price {
         margin-bottom: 20px;
     }
 }
+
+#progressBar {
+    width: 74%;
+    background-color: #f3f3f3;
+
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
+#progressBar div {
+    height: 30px;
+    width: 100%;
+    background-color: #4caf50;
+    text-align: right;
+    line-height: 30px;
+    color: white;
+
+    text-align: center;
+    
+}

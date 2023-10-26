@@ -83,4 +83,14 @@ input[type="text"] {
     box-sizing: border-box;
 }
 
-/* FALTA BOTÃO */
+button [type="submit"] {
+    cursor: pointer;
+    display: block;
+    background-color: #5568fe;
+    font-size: 18px;
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+}

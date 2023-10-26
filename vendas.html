@@ -1,0 +1,151 @@
+<!DOCtype html>
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta nome="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
+        <link href='assets\css\layout.css' rel='stylesheet'>
+        <link href='assets\css\usuarios.css' rel='stylesheet'>
+        <link href='assets\css\vendas.css' rel='stylesheet'>
+        <title>Usuários - Ber & Nice</title>
+
+        <script>
+            var sellerDatabase = {
+                "18": { "name": "Bolsonaro" },
+                "13": { "name": "Lula" },
+                // Adicione mais vendedores conforme necessário
+            };
+
+
+
+            var productDatabase = {
+                "1": { "name": "Abacaxi", "type": "Fruta", "price": "R$5", "stockQuantity": "80", "desiredQuantity": "", "supplier": "Fornecedor A", "color": "", "size": "Médio" },
+                "2": { "name": "Tênis Nike", "type": "Roupa", "price": "R$399", "stockQuantity": "100", "desiredQuantity": "0", "supplier": "Fornecedor B", "color": "Preto", "size": "Pequeno" },
+                "3": { "name": "Blusa", "type": "Roupa", "price": "R$210", "stockQuantity": "50", "desiredQuantity": "0", "supplier": "Fornecedor C", "color": "Cinza", "size": "Médio" },
+                "4": { "name": "Televisao", "type": "Eletrônico", "price": "R$20", "stockQuantity": "10", "desiredQuantity": "0", "supplier": "Fornecedor D", "color": "", "size": "Grande" },
+                "5": { "name": "Notebook Acer", "type": "Eletrônico", "price": "R$20", "stockQuantity": "3", "desiredQuantity": "0", "supplier": "Fornecedor E", "color": "", "size": "Grande" },
+                "6": { "name": "Camisinha Futebolística", "type": "Anti-kid", "price": "R$5", "stockQuantity": "155", "desiredQuantity": "0", "supplier": "Fornecedor F", "color": "", "size": "Pequeno" },
+            };
+
+            function fillSellerForm() {
+                var sellerID = document.getElementById("sellerID").value;
+                var seller = sellerDatabase[sellerID];
+                if (seller) {
+                    document.getElementById("sellerName").value = seller.name;
+                }
+            }
+
+            function fillProductForm() {
+                var productID = document.getElementById("productID").value;
+                var product = productDatabase[productID];
+                if (product) {
+                    document.getElementById("productName").value = product.name;
+                    document.getElementById("productType").value = product.type;
+                    document.getElementById("productPrice").value = product.price;
+                    document.getElementById("stockQuantity").value = product.stockQuantity;
+                    document.getElementById("desiredQuantity").value = product.desiredQuantity;
+                    document.getElementById("supplier").value = product.supplier;
+                    document.getElementById("color").value = product.color;
+                    document.getElementById("size").value = product.size;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+
+        <div class="grid-container">
+            <div class="header">
+                <a href="menu.html">Ber & Nice</a>
+            </div>
+
+            <div class="header2">
+            </div>
+
+            <div class="left" style="background-color: #212529;">
+                <div class="nav-menu">
+                    <a href="vendas.html">Realizar Venda</a>
+                    <a href="produtos.html">Produtos</a>
+                    <a href="usuarios.html">Usuários</a>
+                    <a href="relatorios.html">Relatórios</a>
+                    <a href="login.html">Sair</a>
+                </div>
+            </div>
+
+            <div class="middle" style="background-color: #151719;">
+                <div class="top-container">
+                    <div class="title">
+                        <h2>Realizar Venda</h2>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="middle-container">
+                    <div id="progressBar">
+                        <div id="progress">50%</div>
+                    </div>
+
+
+                    <div class="form">
+
+
+
+                        <form class="forms" action="">
+                            <h2>Vendedor Responsável</h2>
+                            <br>
+                            <label for="sellerID">ID do Vendedor:</label><br>
+                            <input type="text" id="sellerID" name="sellerID" onchange="fillSellerForm()"><br>
+                            <label for="sellerName">Nome do Vendedor:</label><br>
+                            <input type="text" id="sellerName" name="sellerName" class="disabled" disabled><br><br>
+                        </form>
+
+
+                        <form class="forms" action="">
+                            <h2>Formulário do Produto</h2>
+                            <br>
+
+                            <label for="productID">ID do Produto:</label><br>
+                            <input type="text" id="productID" name="productID" onchange="fillProductForm()"><br>
+                            <label for="productName">Nome do Produto:</label><br>
+                            <input type="text" id="productName" name="productName" class="disabled" disabled><br>
+                            <label for="productType">Tipo do Produto:</label><br>
+                            <input type="text" id="productType" name="productType" class="disabled" disabled><br>
+                            <label for="productPrice">Preço do Produto:</label><br>
+                            <input type="text" id="productPrice" name="productPrice" class="disabled" disabled><br>
+                            <label for="stockQuantity">Quantidade no Estoque:</label><br>
+                            <input type="text" id="stockQuantity" name="stockQuantity" class="disabled" disabled><br>
+                            <label for="desiredQuantity">Quantidade Desejada:</label><br>
+                            <input type="text" id="desiredQuantity" name="desiredQuantity"><br>
+                            <label for="supplier">Fornecedor do Produto:</label><br>
+                            <input type="text" id="supplier" name="supplier" class="disabled" disabled><br>
+                            <label for="color">Cor do Produto:</label><br>
+                            <input type="text" id="color" name="color" class="disabled" disabled><br>
+                            <label for="size">Tamanho do Produto:</label><br>
+                            <input type="text" id="size" name="size" class="disabled" disabled><br><br>
+                            <!-- <input type="submit" id="advanceButton" value="Avançar"> -->
+
+                        </form>
+                    </div>
+                    <br>
+
+                    <div class="wrapper">
+                        <div class="link_wrapper">
+                            <a 
+                           style="margin-left: 50px;" href="realizar_venda.html">Avançar</a>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                                    <path
+                                        d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    </html>
