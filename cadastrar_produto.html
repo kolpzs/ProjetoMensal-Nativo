@@ -78,13 +78,17 @@
                             max="10000.00" step="0.01" placeholder="Custo Total da Compra" required>
 
                         <label for="preco">Preço Unitário:</label>
-                        <input type="number" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" min="0.00" max="10000.00" step="0.01"
-                            placeholder="Preço Unitário do Produto" required>
+                        <input type="number" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" min="0.00"
+                            max="10000.00" step="0.01" placeholder="Preço Unitário do Produto" required>
 
                         <label for="cor">Cor do Produto:</label>
                         <input type="color" id="cor" class="cor" value="#6EA8FE">
 
-                        <input id="submit" type="submit">
+                        <label for="confirmar">Confirmo que todas as informações estão corretas.</label>
+                        <input type="checkbox" id="confirmar" name="confirmar" value="confirmar" style="width:1%;"required>
+                        
+                        <br>
+                        <input id="submit" type="submit" value="Enviar">
                     </form>
                 </div>
             </div>
