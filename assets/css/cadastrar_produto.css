@@ -1,0 +1,98 @@
+.container {
+    margin: 30px 50px;
+}
+
+.title h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.title hr {
+    margin: 20px 0;
+    border-radius: 2px;
+    border-color: rgba(255, 255, 255, 0.20);
+}
+
+.scroll-menu {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scroll-menu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    border-right: 1px solid black;
+}
+
+.scroll-menu a:hover {
+    background-color: #777;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: white;
+    border: 1px solid black;
+    padding: 30px;
+    width: 100%;
+    box-shadow: 15px 14px 39px 5px rgba(0, 0, 0, 0.46);
+}
+
+.form form {
+    width: 100%;
+}
+
+.form label {
+    font-size: 18px;
+    color: black;
+    margin: 10px 10px 10px 0;
+}
+
+.form input,
+.form select {
+    font-size: 15px;
+    padding: 8px;
+    vertical-align: middle;
+    margin: 10px 10px 10px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%;
+    display: inline-block;
+}
+
+.form input::-webkit-outer-spin-button,
+.form input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.cor {
+    height: 50px;
+}
+
+#submit{
+    text-align: center;
+    color: white;
+    background-color: #214780;
+    font-weight: bold;
+    width: 25%;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .form-inline input {
+        margin: 10px 0;
+    }
+
+    .form-inline {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

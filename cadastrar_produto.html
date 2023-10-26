@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Aboreto' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet'>
+    <link href='assets\css\layout.css' rel='stylesheet'>
+    <link href='assets\css\cadastrar_produto.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cadastrar Produto - Ber & Nice</title>
+
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="header">
+            <a href="menu.html">Ber & Nice</a>
+        </div>
+
+        <div class="header2">
+        </div>
+
+        <div class="left" style="background-color: #212529;">
+            <div class="nav-menu">
+                <a href="realizar_venda.html">Realizar Venda</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="usuarios.html">Usuários</a>
+                <a href="relatorios.html">Relatórios</a>
+                <a href="login.html">Sair</a>
+            </div>
+        </div>
+
+        <div class="middle" style="background-color: #151719;">
+            <div class="container">
+                <div class="title">
+                    <h2>Cadastrar Produto</h2>
+                    <hr>
+                </div>
+
+                <div class="scroll-menu">
+                    <a href="produtos.html">Voltar</a>
+                </div>
+                <div class="title">
+                    <hr>
+                </div>
+
+
+                <div class="form">
+                    <form>
+                        <label for="name">Nome:</label>
+                        <input id="name" type="name" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);"
+                            placeholder="Nome de Identificação do Produto" required>
+                        <label for="id">ID:</label>
+                        <input id="number" type="number" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);"
+                            placeholder="Código de Identificação do Produto" required>
+
+                        <label for="fornecedor">Fornecedor:</label>
+                        <select id="fornecedor" name="fornecedor">
+                            <option value="fornecedor-opt">Fornecedor A</option>
+                            <option value="fornecedor-opt">Fornecedor B</option>
+                            <option value="fornecedor-opt">Fornecedor C</option>
+                            <option value="fornecedor-opt">Fornecedor D</option>
+                        </select>
+
+                        <label for="quantidade">Quantidade Comprada:</label>
+                        <input id="quantidade" type="number" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);"
+                            placeholder="Quantidade do Produto" required>
+
+                        <label for="data-quantidade">Data da Compra:</label>
+                        <input type="date" id="data-quantidade" min="2020-01-01" max="2024-12-31"
+                            pattern="\d{2}-\d{2}-\d{4}" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);"
+                            required>
+
+                        <label for="custo">Custo Total:</label>
+                        <input type="number" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" min="0.00"
+                            max="10000.00" step="0.01" placeholder="Custo Total da Compra" required>
+
+                        <label for="preco">Preço Unitário:</label>
+                        <input type="number" oninvalid="InvalidMsg(this);" oninput="InvalidMsg(this);" min="0.00" max="10000.00" step="0.01"
+                            placeholder="Preço Unitário do Produto" required>
+
+                        <label for="cor">Cor do Produto:</label>
+                        <input type="color" id="cor" class="cor" value="#6EA8FE">
+
+                        <input id="submit" type="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function InvalidMsg(textbox) {
+            if (textbox.value == '') {
+                textbox.setCustomValidity('Por favor, preencha os campos marcados.');
+            }
+            else if (textbox.validity.typeMismatch) {
+                textbox.setCustomValidity('Por favor, insira um valor válido na caixa marcada.');
+            }
+            else {
+                textbox.setCustomValidity('');
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>
